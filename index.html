@@ -9,9 +9,13 @@
 		var lines = origin.split('\n');
 		for(var i = 0;i < lines.length;i++){
 		    var words = lines[i].split(' ');
-		    var lastWord = words[words.length - 1];
-		    result = result + lastWord + ', ';
-		    result = result + lines[i].substring(0, lines[i].length - lastWord.length - 1) + '\n' ;
+		    if (words.length > 0)
+		    {
+			    var lastWord = words[words.length - 1];
+			    result = result + lastWord + ', ';
+			    result = result + lines[i].substring(0, lines[i].length - lastWord.length);
+		    }
+		    result = result + '\n' ;
 		}
 		document.getElementById('resulting').value = result;
 	}
@@ -35,8 +39,7 @@
 This is an Example
 Santiago Ribero
 Chloé Margaret Louise Russell
-Santiago Ribero Vairo
-</textarea>
+Santiago Ribero Vairo</textarea>
 		</td>
 		<td>
 			<input type="button" onclick="myFunction()" name="transform" id="transform" value="Transform -->"/>
