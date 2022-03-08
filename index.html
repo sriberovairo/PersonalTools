@@ -8,12 +8,16 @@
 		var origin = document.getElementById('origin').value;
 		var lines = origin.split('\n');
 		for(var i = 0;i < lines.length;i++){
-		    var words = lines[i].split(' ');
-		    if (words.length > 0)
+			if (Boolean(lines[i]))
 		    {
+		    	var words = lines[i].split(' ');
 			    var lastWord = words[words.length - 1];
-			    result = result + lastWord + ', ';
-			    result = result + lines[i].substring(0, lines[i].length - lastWord.length);
+			    result = result + lastWord
+			    if (words.length > 1)
+			    {
+				    result = result + ', ';
+				    result = result + lines[i].substring(0, lines[i].length - lastWord.length);
+				}
 		    }
 		    result = result + '\n' ;
 		}
