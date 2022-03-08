@@ -11,7 +11,7 @@
 		    var words = lines[i].split(' ');
 		    var lastWord = words[words.length - 1];
 		    result = result + lastWord + ', ';
-		    result = result + lines[i].substring(0, lines[i].length - lastWord.length) + '\n' ;
+		    result = result + lines[i].substring(0, lines[i].length - lastWord.length - 1) + '\n' ;
 		}
 		document.getElementById('resulting').value = result;
 	}
@@ -21,12 +21,12 @@
 <table>
 	<tr>
 		<td>
-			Original text
+			List of Names and Surname
 		</td>
 		<td>
 		</td>
 		<td>
-			Resulting text
+			List of Surname, Names
 		</td>
 	</tr>
 	<tr>
